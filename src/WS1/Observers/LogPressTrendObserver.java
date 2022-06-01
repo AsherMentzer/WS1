@@ -1,4 +1,11 @@
 package WS1.Observers;
 
-public class LogPressTrendObserver {
+import WS1.Enuns.Trend;
+
+public class LogPressTrendObserver implements Observer<Trend>{
+
+    @Override
+    public void update(Trend data) {
+
+    }
 }

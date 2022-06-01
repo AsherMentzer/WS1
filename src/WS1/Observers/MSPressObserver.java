@@ -1,4 +1,10 @@
 package WS1.Observers;
 
-public class MSPressObserver {
+import WS1.Enuns.Trend;
+
+public class MSPressObserver implements Observer<Integer>{
+    @Override
+    public void update(Integer data) {
+
+    }
 }
