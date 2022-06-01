@@ -8,6 +8,8 @@ public class AlarmClockRecord {
     public AlarmClockRecord(int interval,AlarmListener alarmListener) {
         this.interval = interval;
         this.itsAlarmListener=alarmListener;
+
+        System.out.println(this.getClass().getSimpleName() + " was created");
     }
 
     public int getInterval() {

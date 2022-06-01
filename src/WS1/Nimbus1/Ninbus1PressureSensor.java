@@ -7,12 +7,12 @@ import java.util.Random;
 public class Ninbus1PressureSensor extends Sensor {
     private Random rnd;
 
-    public Ninbus1PressureSensor(String type) {
-        super(type, 1100);
+    public Ninbus1PressureSensor(String type, int interval) {
+        super(type, interval);
     }
 
     @Override
     protected int read() {
-        return RandomSupplier.getRnd().nextInt(950,1050);
+        return RandomSupplier.getRnd().nextInt(950, 1050);
     }
 }

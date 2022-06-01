@@ -4,14 +4,18 @@ import WS1.Enuns.Trend;
 import WS1.Observers.Observer;
 
 public class PressureTrendSensor extends Observable implements Observer<Integer> {
-    private int lastReading1;
-    private int lastReading2;
-    private int lastReading3;
-    public Trend pressureState;
-    public Trend lastState= Trend.STABLE;
+    private int lastReading1 = 0;
+    private int lastReading2 = 0;
+    private int lastReading3 = 0;
+    private Trend pressureState = Trend.STABLE;
+    private Trend lastState= Trend.STABLE;
 
-    public PressureTrendSensor(int lastReading1) {
-        this.lastReading1 = lastReading1;
+    public PressureTrendSensor(Sensor pressSensor){
+        System.out.println(this.getClass().getSimpleName() + " was created");
+
+        pressSensor.addObserver(this);
+
+        System.out.println(this.getClass().getSimpleName() + " observes " + pressSensor.getClass().getSimpleName());
     }
 
     public Trend calc() {
@@ -25,10 +29,9 @@ public class PressureTrendSensor extends Observable implements Observer<Integer>
     }
 
     public void check() {
-        Trend current = calc();
-        if (lastState != current) {
-            notifyObserver(current);
-            lastState = current;
+        if (lastState != pressureState) {
+            notifyObserver(pressureState);
+            lastState = pressureState;
         }
     }
 
@@ -38,6 +41,7 @@ public class PressureTrendSensor extends Observable implements Observer<Integer>
         lastReading3 = lastReading2;
         lastReading2 = lastReading1;
         lastReading1 = data;
+        pressureState = calc();
         check();
     }
 }

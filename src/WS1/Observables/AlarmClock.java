@@ -11,11 +11,12 @@ public class AlarmClock
     protected static AlarmClock instance = null;
     private ArrayList<AlarmClockRecord> itsAlarmClockRecords = new ArrayList();
 
-    protected AlarmClock() {}
+    protected AlarmClock() {System.out.println(this.getClass().getSimpleName() + " was created");}
     public static AlarmClock theInstance()
     {
-        if(null==instance)
+        if(null==instance) {
             instance = new AlarmClock();
+        }
         return instance;
     }
 

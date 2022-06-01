@@ -6,6 +6,7 @@ public class SensorAlarmListener implements AlarmListener{
 
     public SensorAlarmListener(Sensor itsSensor) {
         this.itsSensor = itsSensor;
+        System.out.println(this.getClass().getSimpleName() + " was created");
     }
 
     @Override
