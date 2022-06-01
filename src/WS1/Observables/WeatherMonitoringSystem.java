@@ -3,7 +3,7 @@ package WS1.Observables;
 import WS1.Enuns.Trend;
 import WS1.Nimbus1.Nimbus1Clock;
 import WS1.Nimbus1.Nimbus1TemperatureSensor;
-import WS1.Nimbus1.Ninbus1PressureSensor;
+import WS1.Nimbus1.Nimbus1PressureSensor;
 import WS1.Observers.Observer;
 
 public class WeatherMonitoringSystem {
@@ -18,7 +18,7 @@ public class WeatherMonitoringSystem {
         System.out.println(this.getClass().getSimpleName() + " was created");
 
         Nimbus1Clock.theInstance();
-        pressSensor = new Ninbus1PressureSensor("Pressure", 1100);
+        pressSensor = new Nimbus1PressureSensor("Pressure", 1100);
         tempSensor = new Nimbus1TemperatureSensor("Temperature", 700);
         pressTrendSensor = new PressureTrendSensor(pressSensor);
     }

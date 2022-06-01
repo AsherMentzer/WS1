@@ -4,7 +4,12 @@ public abstract class Sensor extends Observable{
     private int lastReading;
     private int interval;
     private String type;
-    public Sensor(String type,int interval) {
+
+    public String getType() {
+        return type;
+    }
+
+    public Sensor(String type, int interval) {
         this.type = type;
         this.interval = interval;
 

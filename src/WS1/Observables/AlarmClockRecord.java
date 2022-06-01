@@ -6,7 +6,7 @@ public class AlarmClockRecord {
     AlarmListener itsAlarmListener;
 
     public AlarmClockRecord(int interval,AlarmListener alarmListener) {
-        this.interval = interval;
+        remainingTime = this.interval = interval;
         this.itsAlarmListener=alarmListener;
 
         System.out.println(this.getClass().getSimpleName() + " was created");

@@ -4,10 +4,10 @@ import WS1.Observables.Sensor;
 
 import java.util.Random;
 
-public class Ninbus1PressureSensor extends Sensor {
+public class Nimbus1PressureSensor extends Sensor {
     private Random rnd;
 
-    public Ninbus1PressureSensor(String type, int interval) {
+    public Nimbus1PressureSensor(String type, int interval) {
         super(type, interval);
     }
 
